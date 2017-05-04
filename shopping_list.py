@@ -22,8 +22,12 @@ def add_new_shopping_list(lists_by_name, new_list_name):
     """
 
     # your code here! 
-    pass
-
+    if new_list_name in lists_by_name:
+        print "error"
+        get_menu_choice()
+    else:
+        lists_by_name[new_list_name] = []
+    
 
 def remove_shopping_list(lists_by_name, list_name_to_remove):
     """Remove shopping list from shopping lists dict.
@@ -39,7 +43,12 @@ def remove_shopping_list(lists_by_name, list_name_to_remove):
     """
 
     # your code here! 
-    pass
+    if list_name_to_remove in lists_by_name:
+        print "error"
+        get_menu_choice()
+    else:
+        del list_name_to_remove
+
 
 
 def add_to_shopping_list(lists_by_name, list_name, items):
@@ -72,7 +81,7 @@ def remove_from_shopping_list(lists_by_name, list_name, items):
     """
 
     # your code here! 
-    pass
+    
 
 
 def display_shopping_list(lists_by_name, list_name):
@@ -89,7 +98,10 @@ def display_shopping_list(lists_by_name, list_name):
     """
 
     # your code here! 
-    pass
+    if list_name in lists_by_name:
+        print lists_by_name[list_name]
+    else:
+        print "list is missing"
 
 
 def show_all_lists(lists_by_name):
@@ -102,7 +114,7 @@ def show_all_lists(lists_by_name):
     """
 
     # your code here! 
-    pass
+    print lists_by_name
 
 
 def parse_string_of_items(items_string):
